@@ -128,6 +128,38 @@
   other::---
   ```
 
+## Exercice 4
+* Command 
+  ```sh 
+  sudo apt install apache2
+  sudo systemctl start apache2
+  sudo systemctl enable apache2
+  sudo systemctl status apache2
+  ```
+* Output 
+  ```sh
+  ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2025-02-26 10:44:28 CET; 1min 58s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 46799 (apache2)
+      Tasks: 55 (limit: 4611)
+     Memory: 6.2M
+        CPU: 31ms
+     CGroup: /system.slice/apache2.service
+             ├─46799 /usr/sbin/apache2 -k start
+             ├─46800 /usr/sbin/apache2 -k start
+             └─46801 /usr/sbin/apache2 -k start
+
+  févr. 26 10:44:28 baka-Standard-PC-Q35-ICH9-2009 systemd[1]: Starting The Apache HTTP Server...
+  févr. 26 10:44:28 baka-Standard-PC-Q35-ICH9-2009 apachectl[46798]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+  févr. 26 10:44:28 baka-Standard-PC-Q35-ICH9-2009 systemd[1]: Started The Apache HTTP Server.
+  ```
+
+* Command 
+  ```sh
+  sudo systemctl restart apache2:q
+  ```
 
 ### Installation
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
