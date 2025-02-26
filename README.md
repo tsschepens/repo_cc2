@@ -160,7 +160,7 @@
   ```sh
   sudo systemctl restart apache2:q
   ```
-![html](2025-02-26-094635_hyprshot.png)
+![html](screeshotHtml.png)
 
 
 
