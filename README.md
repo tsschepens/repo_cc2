@@ -9,10 +9,9 @@
 
 
 
-<!-- GETTING STARTED -->
+<!-- CC2 -->
 ## Exercise 1
 
-This is an example of how to list things you need to use the software and how to install them.
 * find
   ```sh
   find -ctime 7 > Documents/recent_files.txt
@@ -21,49 +20,116 @@ This is an example of how to list things you need to use the software and how to
 * Output
   ```sh
   .
-./.xsession-errors
-./.sudo_as_admin_successful
-./.bash_history
-./Music
-./.icons
-./.icons/uwuntu-welcome.png
-./Documents
-./Documents/cc22.md
-./Documents/cc2.md
-./Documents/fileFromSevenDaysAgo
-./Public
-./.lesshst
-./Desktop
-./.Xauthority
-./.profile
-./Videos
-./.bash_logout
-./.config
-./.config/fish
-./.config/fish/functions
-./.config/fish/functions/fish_greeting.fish
-./.config/fish/config.fish
-./.config/fish/completions
-./.config/fish/conf.d
-./.config/fish/conf.d/omf.fish
-./.config/fish/fish_variables
-.local/share/gnome-settings-daemon/input-sources-converted
-./Downloads
-./Templates
-./Templates/LibreOffice Calc.ods
-./Templates/LibreOffice Impress.odp
-./Templates/MS Excel.xlsx
-./Templates/LibreOffice Writer.odt
-./Templates/LibreOffice Draw.odg
-./Templates/Text File.txt
-./Templates/MS Word.docx
-./Templates/Empty File
-./Templates/MS PowerPoint.pptx
-./.bashrc
+  ./.xsession-errors
+  ./.sudo_as_admin_successful
+  ./.bash_history
+  ./Music
+  ./.icons
+  ./.icons/uwuntu-welcome.png
+  ./Documents
+  ./Documents/cc22.md
+  ./Documents/cc2.md
+  ./Documents/fileFromSevenDaysAgo
+  ./Public
+  ./.lesshst
+  ./Desktop
+  ./.Xauthority
+  ./.profile
+  ./Videos
+  ./.bash_logout
+  ./.config
+  ./.config/fish
+  ./.config/fish/functions
+  ./.config/fish/functions/fish_greeting.fish
+  ./.config/fish/config.fish
+  ./.config/fish/completions
+  ./.config/fish/conf.d
+  ./.config/fish/conf.d/omf.fish
+  ./.config/fish/fish_variables
+  .local/share/gnome-settings-daemon/input-sources-converted
+  ./Downloads
+  ./Templates
+  ./Templates/LibreOffice Calc.ods
+  ./Templates/LibreOffice Impress.odp
+  ./Templates/MS Excel.xlsx
+  ./Templates/LibreOffice Writer.odt
+  ./Templates/LibreOffice Draw.odg
+  ./Templates/Text File.txt
+  ./Templates/MS Word.docx
+  ./Templates/Empty File
+  ./Templates/MS PowerPoint.pptx
+  ./.bashrc
   ```  
 
-### Installation
+* Command 
+  ```sh
+  cat Documents/recent_files.txt | grep Ubuntu
+  ```
+* Output
+  ```sh
+  none
+  ```
 
+* Command 
+  ```sh
+  cat Documents/recent_files.txt | grep uwuntu                                                                                                                                                                       1 (0.002s) < 10:- output :
+  ```
+* Output
+  ```sh
+  ./.icons/uwuntu-welcome.png
+  ```
+
+## Exercice 2
+
+* Command
+  ```sh
+  mkdir -p projet/src projet/bin projet/doc
+  mv src/main.c src/util.c bin/ && mv src/util.h doc/
+  tree
+  ```
+* Output 
+  ```sh
+  .
+  ├── bin
+  │   ├── main.c
+  │   └── util.c
+  ├── doc
+  │   └── util.h
+  └── src
+  ```
+
+## Exercice 3
+* Commmand
+  ```sh
+  echo Data Confidential > secure_data/data.txt
+  chmod 700 data.txt
+  sudo chown thomas data.txt
+  sudo setfacl -m u:aclTest:r data.txt
+  ls -l
+  ```
+* Output
+  ```sh
+  total 4
+  -rwxr-----+ 1 thomas baka 18 févr. 26 10:24 data.txt
+  ```
+* Command
+  ```sh
+  getfacl data.txt
+  ```
+* Output
+  ```sh
+  file: data.txt
+  # owner: thomas
+  # group: baka
+  user::rwx
+  user:aclTest:r--
+  group::---
+  mask::r--
+  other::---
+  ```
+
+
+### Installation
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Get a free API Key at [https://example.com](https://example.com)
